@@ -1,8 +1,8 @@
 <h2> Welcome to the Adoption Center of IT Sligo </h2>
 
-{{#if message}} 
+{{#if message}}
 <h2>
-    {{message}}    
+    {{message}}
 </h2>
 {{/if}}
 
@@ -11,3 +11,7 @@
         font-weight: bold;
     }
 </style>
+
+<p>{{> news}}</p>
+<p>{{> links data=links}}</p>
+<p>{{> legal}}</p>

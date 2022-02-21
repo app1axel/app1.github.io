@@ -1,22 +1,25 @@
 const express = require('express');
 const router = express.Router();
+const linksForHome =
+    [{ url: 'https://www.itsligo.ie', text: 'IT Sligo Home Page' },
+    { url: 'https://www.irishtimes.com', text: 'The Irish Times' }];
 
-router.get('/',  (req, res) => {
+router.get('/', (req, res) => {
 
     var message = "";
-     
-    if (req.signedCookies.tracking){
+
+    if (req.signedCookies.tracking) {
         var dateLastVisit = req.signedCookies.tracking;
         var message = "Welcome back, you last visited on : " + dateLastVisit;
     }
 
     var currentDate = new Date();
-    res.cookie('tracking',currentDate.toDateString(), {signed : true});
+    res.cookie('tracking', currentDate.toDateString(), { signed: true });
 
-    res.render('home', {'message': message});
+    res.render('home', { 'message': message, links: linksForHome });
 });
 
-  
+
 router.get('/about', function (req, res) {
     res.render('about');
 });
