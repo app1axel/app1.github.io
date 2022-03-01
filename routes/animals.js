@@ -24,6 +24,24 @@ var data = {
     }
 }
 
+router.get('/addnew', (req, res) => {
+    console.log("Data sent via post");
+    var fname = req.query.firstname;
+    var sname = req.query.surname;
+    console.log('Date entered ' + fname + ' ' + sname);
+    res.render('personform')
+})
+
+router.post('/addnew', (req, res) => {
+    console.log("Data sent via post");
+    console.table(req.body);
+    res.redirect(303, 'personadded',)
+})
+
+router.get('/personadded', (req, res) => {
+    res.render('personadded')
+})
+
 router.get('/:name', (req, res) => {
     var name = req.params.name;
     if (data[name]) {
