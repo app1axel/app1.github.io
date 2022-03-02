@@ -14,3 +14,9 @@ p {
 h3 {
     text-decoration: underline;
 }
+.navbar .navbar-brand img {
+    width: 50%;
+}
+.navbar {
+    font-size: large;
+}
