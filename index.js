@@ -7,8 +7,10 @@ const animals = require('./routes/animals')
 const newsMiddleware = require('./lib/middleware')
 
 app.use(express.static('public'));
+// middleware for parsing the body of Posts
+// need this before you can use req.body
 app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser("Yummy"));
+app.use(cookieParser("una is great"));
 app.use(newsMiddleware)
 app.use('/', home)
 app.use('/animals', animals)
