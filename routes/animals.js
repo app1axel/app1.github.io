@@ -29,23 +29,23 @@ router.get('/addnew', (req, res) => {
     var fname = req.query.firstname;
     var sname = req.query.surname;
     console.log('Date entered ' + fname + ' ' + sname);
-    res.render('personform')
+    res.render('animalsform')
 })
 
 router.post('/addnew', (req, res) => {
     console.log("Data sent via post");
     console.table(req.body);
-    res.redirect(303, 'personadded',)
+    res.redirect(303, 'animaladded',)
 })
 
-router.get('/personadded', (req, res) => {
-    res.render('personadded')
+router.get('/animaladded', (req, res) => {
+    res.render('animaladded')
 })
 
 router.get('/:name', (req, res) => {
     var name = req.params.name;
     if (data[name]) {
-        res.render('person', { person: data[name] });
+        res.render('animal', { animal: data[name] });
     }
     else {
         res.status(404);
@@ -54,6 +54,6 @@ router.get('/:name', (req, res) => {
 })
 
 router.get('/', (req, res) =>
-    res.render('listing', { personlist: data }))
+    res.render('listing', { animallist: data }))
 
 module.exports = router;

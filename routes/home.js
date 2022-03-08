@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const linksForHome =
     [{ url: 'https://www.itsligo.ie', text: 'IT Sligo Home Page' },
-    { url: 'https://www.irishtimes.com', text: 'The Irish Times' }];
+    { url: 'https://www.worldwildlife.org', text: 'WWF official website' }];
 
 router.get('/', (req, res) => {
 
